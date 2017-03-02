@@ -1,5 +1,7 @@
 package edu.kis.vh.stacks.list;
 
+import static edu.kis.vh.stacks.Stack.EMPTY_STACK_INDICATOR;
+
 public class StackList {
 
 	Node last;
@@ -25,7 +27,7 @@ public class StackList {
 
 	public int peek() {
 		if (empty()) {
-			return -1;
+			return EMPTY_STACK_INDICATOR;
 		}
 		return last.value;
 	}
