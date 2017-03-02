@@ -32,3 +32,4 @@ class StacksDemo {
 	}
 	
 }
+// IDE: Netbeans, alt+left/alt+right przesuwa kursor pomiedzy jego ostatnimi pozycjami
