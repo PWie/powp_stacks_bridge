@@ -4,8 +4,8 @@ import static edu.kis.vh.stacks.Stack.EMPTY_STACK_INDICATOR;
 
 public class StackList {
 
-	Node last;
-	int i;
+	private Node last;
+	private int i;
 
 	public void pushElement(int i) {
 		if (last == null) {
