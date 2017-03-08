@@ -8,6 +8,10 @@ public class Stack {
 	private int[] items = new int[STACK_SIZE];
 
 	private int total = EMPTY_STACK_INDICATOR;
+
+	public int getTotal() {
+		return total;
+	}
 	
 	public void push(int i) {
 		if (!isFull()) {
