@@ -5,7 +5,7 @@ public class Stack {
 	private static final int STACK_SIZE = 12;
 	public static final int EMPTY_STACK_INDICATOR = -1;
 	
-	private int[] items = new int[STACK_SIZE];
+	private final int[] items = new int[STACK_SIZE];
 
 	private int total = EMPTY_STACK_INDICATOR;
 
