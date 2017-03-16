@@ -4,6 +4,10 @@ public class StackHanoi extends Stack {
 
 	private int totalRejected = 0;
 
+	public StackHanoi() {
+		super();
+	}
+
 	public int reportRejected() {
 		return totalRejected;
 	}

@@ -76,3 +76,8 @@ public class Stack {
 	Dzięku uzyciu interfejsu jako skladowej klasy mozemy w bardzo latwy sposob zmienic
 	metode przchowywania stosu zmieniajac jedynie typ obiektu umieszonego w tym polu
  */
+
+/*
+	13. open declaration oraz kliklniecie myszka z ctr przenosi do deklaracji
+	metody w interfejsie.
+ */
