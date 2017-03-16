@@ -1,5 +1,7 @@
 package edu.kis.vh.stacks;
 
+import edu.kis.vh.stacks.list.StackList;
+
 /**
  *
  * @author Patryk Wierzynski
@@ -9,14 +11,14 @@ public class Stack {
 	private static final int STACK_SIZE = 12;
 	public static final int EMPTY_STACK_INDICATOR = -1;
 
-	private StackArray stackArray;
+	private StackList stackList;
 
 	public Stack() {
-		this(new StackArray());
+		this(new StackList());
 	}
 
-	public Stack(StackArray stackArray) {
-		this.stackArray = stackArray;
+	public Stack(StackList stackList) {
+		this.stackList = stackList;
 	}
 
 	/**
@@ -24,7 +26,7 @@ public class Stack {
 	 * @return total items on stack
 	 */
 	public int getTotal() {
-		return stackArray.getTotal();
+		return stackList.getTotal();
 	}
 	
 	/**
@@ -32,7 +34,7 @@ public class Stack {
 	 * @param i - element to be putted on stack
 	 */
 	public void push(int i) {
-		stackArray.push(i);
+		stackList.pushElement(i);
 	}
 
 	/**
@@ -40,7 +42,7 @@ public class Stack {
 	 * @return true if empty, false otherwise
 	 */
 	public boolean isEmpty() {
-		return stackArray.getTotal() == EMPTY_STACK_INDICATOR;
+		return stackList.empty();
 	}
 
 	/**
@@ -48,7 +50,7 @@ public class Stack {
 	 * @return true if full, false otherwise
 	 */
 	public boolean isFull() {
-		return stackArray.getTotal() == STACK_SIZE - 1;
+		return stackList.full();
 	}
 
 	/**
@@ -56,7 +58,7 @@ public class Stack {
 	 * @return element from top
 	 */
 	public int top() {
-		return stackArray.top();
+		return stackList.peek();
 	}
 
 	/**
@@ -64,7 +66,7 @@ public class Stack {
 	 * @return element removed from stack
 	 */
 	public int pop() {
-		return stackArray.pop();
+		return stackList.pop();
 	}
 
 }
