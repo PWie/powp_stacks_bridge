@@ -1,14 +1,13 @@
-package edu.kis.vh.stacks;
+package edu.kis.vh.stacks.methods;
 
 /**
  *
  * @author Patryk Wierzynski
  */
-public class StackArray {
+public class StackArray implements IStackMethod {
 
 	private static final int STACK_SIZE = 12;
-	public static final int EMPTY_STACK_INDICATOR = -1;
-	
+
 	private final int[] items = new int[STACK_SIZE];
 
 	private int total = EMPTY_STACK_INDICATOR;
@@ -17,6 +16,7 @@ public class StackArray {
 	 *
 	 * @return total items on stack
 	 */
+	@Override
 	public int getTotal() {
 		return total;
 	}
@@ -25,6 +25,7 @@ public class StackArray {
 	 *
 	 * @param i - element to be putted on stack
 	 */
+	@Override
 	public void push(int i) {
 		if (!isFull()) {
 			items[++total] = i;
@@ -33,16 +34,18 @@ public class StackArray {
 
 	/**
 	 *
-	 * @return true if empty, false otherwise
+	 * @return true if isEmpty, false otherwise
 	 */
+	@Override
 	public boolean isEmpty() {
 		return total == EMPTY_STACK_INDICATOR;
 	}
 
 	/**
 	 *
-	 * @return true if full, false otherwise
+	 * @return true if isFull, false otherwise
 	 */
+	@Override
 	public boolean isFull() {
 		return total == STACK_SIZE - 1;
 	}
@@ -51,6 +54,7 @@ public class StackArray {
 	 *
 	 * @return element from top
 	 */
+	@Override
 	public int top() {
 		if (isEmpty()) {
 			return EMPTY_STACK_INDICATOR;
@@ -62,6 +66,7 @@ public class StackArray {
 	 *
 	 * @return element removed from stack
 	 */
+	@Override
 	public int pop() {
 		if (isEmpty()) {
 			return EMPTY_STACK_INDICATOR;

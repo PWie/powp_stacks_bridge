@@ -1,6 +1,7 @@
 package edu.kis.vh.stacks;
 
-import edu.kis.vh.stacks.list.StackList;
+import edu.kis.vh.stacks.methods.IStackMethod;
+import edu.kis.vh.stacks.methods.StackList;
 
 /**
  *
@@ -11,14 +12,14 @@ public class Stack {
 	private static final int STACK_SIZE = 12;
 	public static final int EMPTY_STACK_INDICATOR = -1;
 
-	private StackList stackList;
+	private IStackMethod stackItems;
 
 	public Stack() {
 		this(new StackList());
 	}
 
-	public Stack(StackList stackList) {
-		this.stackList = stackList;
+	public Stack(IStackMethod stackItems) {
+		this.stackItems = stackItems;
 	}
 
 	/**
@@ -26,7 +27,7 @@ public class Stack {
 	 * @return total items on stack
 	 */
 	public int getTotal() {
-		return stackList.getTotal();
+		return stackItems.getTotal();
 	}
 	
 	/**
@@ -34,23 +35,23 @@ public class Stack {
 	 * @param i - element to be putted on stack
 	 */
 	public void push(int i) {
-		stackList.pushElement(i);
+		stackItems.push(i);
 	}
 
 	/**
 	 *
-	 * @return true if empty, false otherwise
+	 * @return true if isEmpty, false otherwise
 	 */
 	public boolean isEmpty() {
-		return stackList.empty();
+		return stackItems.isEmpty();
 	}
 
 	/**
 	 *
-	 * @return true if full, false otherwise
+	 * @return true if isFull, false otherwise
 	 */
 	public boolean isFull() {
-		return stackList.full();
+		return stackItems.isFull();
 	}
 
 	/**
@@ -58,7 +59,7 @@ public class Stack {
 	 * @return element from top
 	 */
 	public int top() {
-		return stackList.peek();
+		return stackItems.top();
 	}
 
 	/**
@@ -66,7 +67,12 @@ public class Stack {
 	 * @return element removed from stack
 	 */
 	public int pop() {
-		return stackList.pop();
+		return stackItems.pop();
 	}
 
 }
+
+/*
+	Dzięku uzyciu interfejsu jako skladowej klasy mozemy w bardzo latwy sposob zmienic
+	metode przchowywania stosu zmieniajac jedynie typ obiektu umieszonego w tym polu
+ */
