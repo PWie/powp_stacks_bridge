@@ -8,17 +8,23 @@ public class Stack {
 
 	private static final int STACK_SIZE = 12;
 	public static final int EMPTY_STACK_INDICATOR = -1;
-	
-	private final int[] items = new int[STACK_SIZE];
 
-	private int total = EMPTY_STACK_INDICATOR;
+	private StackArray stackArray;
+
+	public Stack() {
+		this(new StackArray());
+	}
+
+	public Stack(StackArray stackArray) {
+		this.stackArray = stackArray;
+	}
 
 	/**
 	 *
 	 * @return total items on stack
 	 */
 	public int getTotal() {
-		return total;
+		return stackArray.getTotal();
 	}
 	
 	/**
@@ -26,9 +32,7 @@ public class Stack {
 	 * @param i - element to be putted on stack
 	 */
 	public void push(int i) {
-		if (!isFull()) {
-			items[++total] = i;
-		}
+		stackArray.push(i);
 	}
 
 	/**
@@ -36,7 +40,7 @@ public class Stack {
 	 * @return true if empty, false otherwise
 	 */
 	public boolean isEmpty() {
-		return total == EMPTY_STACK_INDICATOR;
+		return stackArray.getTotal() == EMPTY_STACK_INDICATOR;
 	}
 
 	/**
@@ -44,7 +48,7 @@ public class Stack {
 	 * @return true if full, false otherwise
 	 */
 	public boolean isFull() {
-		return total == STACK_SIZE - 1;
+		return stackArray.getTotal() == STACK_SIZE - 1;
 	}
 
 	/**
@@ -52,10 +56,7 @@ public class Stack {
 	 * @return element from top
 	 */
 	public int top() {
-		if (isEmpty()) {
-			return EMPTY_STACK_INDICATOR;
-		}
-		return items[total];
+		return stackArray.top();
 	}
 
 	/**
@@ -63,10 +64,7 @@ public class Stack {
 	 * @return element removed from stack
 	 */
 	public int pop() {
-		if (isEmpty()) {
-			return EMPTY_STACK_INDICATOR;
-		}
-		return items[total--];
+		return stackArray.pop();
 	}
 
 }
