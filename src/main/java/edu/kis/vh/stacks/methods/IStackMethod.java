@@ -4,7 +4,7 @@ package edu.kis.vh.stacks.methods;
  * Created by Student on 16.03.2017.
  */
 public interface IStackMethod {
-	int EMPTY_STACK_INDICATOR = -1;
+	int EMPTY_STACK_INDICATOR = 0;
 
 	int getTotal();
 
@@ -18,3 +18,8 @@ public interface IStackMethod {
 
 	int pop();
 }
+
+/*
+	dzieki wyciagnieciu wspolnych stalych do interfejsu zmiene dotyczaca wszystkich implementujacych
+	klas wystarczylo wprowadzic tylko w jednym miejscu.
+ */
