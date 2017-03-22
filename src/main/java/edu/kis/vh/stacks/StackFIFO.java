@@ -1,5 +1,6 @@
 package edu.kis.vh.stacks;
 
+import edu.kis.vh.stacks.methods.IStackMethod;
 import edu.kis.vh.stacks.methods.StackList;
 
 public class StackFIFO extends Stack {
@@ -12,6 +13,10 @@ public class StackFIFO extends Stack {
 
 	public StackFIFO() {
 		super();
+	}
+
+	public StackFIFO(IStackMethod stackItems) {
+		super(stackItems);
 	}
 
 	@Override

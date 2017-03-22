@@ -1,11 +1,17 @@
 package edu.kis.vh.stacks;
 
+import edu.kis.vh.stacks.methods.IStackMethod;
+
 public class StackHanoi extends Stack {
 
 	private int totalRejected = 0;
 
 	public StackHanoi() {
 		super();
+	}
+
+	public StackHanoi(IStackMethod stackItems) {
+		super(stackItems);
 	}
 
 	public int reportRejected() {
