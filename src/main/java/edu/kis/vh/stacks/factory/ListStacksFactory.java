@@ -6,7 +6,7 @@ import edu.kis.vh.stacks.StackHanoi;
 import edu.kis.vh.stacks.methods.StackArray;
 import edu.kis.vh.stacks.methods.StackList;
 
-public class StacksListFactory implements IStacksFactory {
+public class ListStacksFactory implements IStacksFactory {
 
 	@Override
 	public Stack getStandardStack() {
