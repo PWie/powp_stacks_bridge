@@ -44,3 +44,5 @@ class StacksDemo {
 	
 }
 // IDE: Netbeans, alt+left/alt+right przesuwa kursor pomiedzy jego ostatnimi pozycjami
+
+// 3.1.17: Fabryki łamią zasadę izolacji, ponieważ od ich implementacji zależy z której abstrakcji korzystają.
