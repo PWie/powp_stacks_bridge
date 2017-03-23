@@ -6,11 +6,12 @@ package edu.kis.vh.stacks.methods;
  */
 public class StackArray implements IStackMethod {
 
-	private static final int STACK_SIZE = 12;
+	public static final int STACK_CAPACITY = 12;
+	private static final int EMPTY_STACK_INDEX = -1;
 
-	private final int[] items = new int[STACK_SIZE];
+	private final int[] items = new int[STACK_CAPACITY];
 
-	private int total = EMPTY_STACK_INDICATOR;
+	private int total = EMPTY_STACK_INDEX;
 
 	/**
 	 *
@@ -38,7 +39,7 @@ public class StackArray implements IStackMethod {
 	 */
 	@Override
 	public boolean isEmpty() {
-		return total == EMPTY_STACK_INDICATOR;
+		return total == EMPTY_STACK_INDEX;
 	}
 
 	/**
@@ -47,7 +48,7 @@ public class StackArray implements IStackMethod {
 	 */
 	@Override
 	public boolean isFull() {
-		return total == STACK_SIZE - 1;
+		return total == STACK_CAPACITY - 1;
 	}
 
 	/**

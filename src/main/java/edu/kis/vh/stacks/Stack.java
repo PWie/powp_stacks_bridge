@@ -9,8 +9,7 @@ import edu.kis.vh.stacks.methods.StackList;
  */
 public class Stack {
 
-	private static final int STACK_SIZE = 12;
-	public static final int EMPTY_STACK_INDICATOR = -1;
+	// 3.2.1 removed unused fields
 
 	private IStackMethod stackItems;
 

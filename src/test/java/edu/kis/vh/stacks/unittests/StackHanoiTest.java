@@ -1,5 +1,7 @@
 package edu.kis.vh.stacks.unittests;
 
+import edu.kis.vh.stacks.methods.IStackMethod;
+import edu.kis.vh.stacks.methods.StackArray;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -32,9 +34,8 @@ public class StackHanoiTest {
 
 	@Test
 	public void testIsFull() {
-		Stack stackObj = new StackHanoi();
-		final int STACK_CAPACITY = 12;
-		for (int i = 0; i < STACK_CAPACITY; i++) {
+		Stack stackObj = new StackHanoi(new StackArray());  // makes sense only for array implementation
+		for (int i = 0; i < StackArray.STACK_CAPACITY; i++) {
 			boolean result = stackObj.isFull();
 			Assert.assertEquals(false, result);
 			stackObj.push(888);
@@ -47,10 +48,9 @@ public class StackHanoiTest {
 	@Test
 	public void testTop() {
 		Stack stackObj = new StackHanoi();
-		final int EMPTY_STACK_VALUE = -1;
 
 		int result = stackObj.top();
-		Assert.assertEquals(EMPTY_STACK_VALUE, result);
+		Assert.assertEquals(IStackMethod.EMPTY_STACK_INDICATOR, result);
 
 		int testValue = 4;
 		stackObj.push(testValue);
